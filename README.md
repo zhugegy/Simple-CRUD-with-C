@@ -1,84 +1,39 @@
-# information-management-system
-字符串管理系统和学生信息管理系统，因为相似所以放在一起了。实现了数据的增、删、改、查（支持正则表达式查找）。手工简单地模拟了Unix环境下命令行输入的方式（包含基本的输入检测）。数据同步存储到外部文件中，不会随程序的结束而丢失。数据在程序中存储于固定长度的一维数组中，也就是模拟出一块固定大小的内存区域。实现了内存分配、内存容量扩展、内存碎片清理操作。具体功能可进入程序用'-h'指令查看。
+# Simple CRUD with C
 
-### 字符串管理系统功能列表（'-h'指令输出）：
--h
-本程序支持指令及其说明：
+![title_img](misc/title_img.png)
 
-添加字符串：**-a "string" [num]**
+Within a fixed-size char-array, carry out Create, Read, Update and Delete operations upon entries like student information.
 
->字符串必须用双引号括起来。可以选填第二参数，手动为字符串指定序号。不填第二参数的话，系统会自动分配一个序号。
+Video Demo: [Vimeo](https://vimeo.com/435030770)
 
-删除字符串：**-d num**
+Executable File Download: [Google Drive](https://drive.google.com/drive/folders/1Sb2Y1ipML-kFS5f1aiZxy29MEQIYZlSB?usp=sharing)
 
->删除指定序号的字符串。
+Features:
+- The char-array can automatically get enlarged when space is insufficient
+- One-letter style command prompt interface, with basic input validation
+- Regular expression support
+- Data is persistently stored in disk files
+- Within the array, roughly simulated managerial operations like allocating space, extending space and defragmentation
+- Full functionality introduction is displayed with '-h' command in program
 
-修改字符串: **-m num "string"**
+---
 
->修改指定序号的字符串的内容。
+# C语言简单增删改查
 
-查询字符串：**-l [num | "string"]**
+![title_img](misc/title_img.png)
 
->列出指定序号或者匹配正则表达式的字符串。可以选填第二参数，如果不填，会列出所有字符串。
+在固定大小的字节数组中，对信息（例如学生信息）实现了增、删、改、查操作。
 
-查询内存地址：**-j num**
+演示视频：[BiliBili](https://www.bilibili.com/video/BV1jD4y1Q733/)
 
->查询指定地址处是否有字符串，若有字符串则显示该字符串。
+可执行文件下载：[蓝奏云](https://wws.lanzous.com/ipKILe9u36h)
 
-统计字符：**-s**
+特色：
+- 数组可以在空间不足时自动扩容
+- 单字母命令风格的控制台交互界面，有基本的输入检查
+- 支持正则表达式
+- 数据实时保存在硬盘文件中
+- 在数组内部，简单地模拟了一些管理操作，比如空间分配、空间扩容和碎片清理
+- 详细功能介绍可进入程序用'-h'指令查看
 
-显示内存信息：**-i**
 
-内存碎片整理: **-o**
-
-退出：**-q**
-
-显示本帮助: **-h**
-
-### 学生信息管理系统功能列表（'-h'指令输出）：
--h
-本程序支持指令及其说明：
-
-修改学号：**-1 string [string...]**
-
->修改学生信息模板的学号。学号可以包含空格。
-
-修改姓名：**-2 string [string...]**
-
->修改学生信息模板的姓名。姓名可以包含空格。
-
--3 -4 -5 -6 同样的用法，修改学生信息模板的对应项目。
-
-添加学生信息到数据库：**-w [num]**
-
->可以选填第二参数，手动为学生信息指定序号。不填第二参数的话，系统会自动分配一个序号。
-
-从数据库删除学生信息：**-r num**
-
->删除指定序号的学生信息。
-
-修改数据库内的学生信息: **-c num**
-
->把指定序号的学生信息的内容修改为当前模板的内容。
-
-查询学生信息：**-l [num | "string"]**
-
->列出指定序号或者匹配正则表达式的学生信息。可以选填第二参数，如果不填，会列出所有字符串。
-
-查询内存地址：**-j num**
-
->查询指定地址处是否有学生信息，若有字符串则显示该学生信息。
-
-统计学生成绩：**-g**
-
->统计所有学生的C语言成绩，给出结果。
-
-统计字符：**-s**
-
-显示内存信息：**-i**
-
-内存碎片整理: **-o**
-
-退出：**-q**
-
-显示本帮助: **-h**
